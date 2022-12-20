@@ -18,6 +18,7 @@ function App() {
   const addMovie = (movie) => {
     setWatchList([...watchList, movie])
   }
+  //spread
 
   const removeMovie = (movie) => {
     let newState = movieList.filter((notMovie) => {
@@ -39,6 +40,8 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
+
+
   useEffect(() => {
     getData();
   }, [page]);

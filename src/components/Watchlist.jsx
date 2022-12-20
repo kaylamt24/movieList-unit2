@@ -1,6 +1,6 @@
 
 import '../App.css'
-import MovieScreen from './MovieScreen'
+
 import MovieCard from './MovieCard'
 
 
