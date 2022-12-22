@@ -4,15 +4,17 @@ import '../App.css'
 import MovieCard from './MovieCard'
 
 
-const Watchlist = ({watchList, addMovie, removeMovie}) => {
+const Watchlist = ({watchList, removeMovie}) => {
 
     const movieDisplay = watchList.map((movie, index) => {
+        
+        return (
         <MovieCard
-        addMovie={addMovie}
         removeMovie={removeMovie}
         movie={movie}
         watchList={watchList}/>
-    })
+    )
+})
     return (
         <div className='watchlist'>
             <h1>My Watchlist</h1>

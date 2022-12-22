@@ -15,13 +15,13 @@ function App() {
   const [watchList, setWatchList] = useState([]);
   const [page, setPage] = useState(1);
 
-  const addMovie = (movie) => {
+  const addMovie = (movie) =>
     setWatchList([...watchList, movie])
-  }
+  
   //spread
 
   const removeMovie = (movie) => {
-    let newState = movieList.filter((notMovie) => {
+    let newState = watchList.filter((notMovie) => {
       return notMovie !== movie
     })
     setWatchList(newState)
@@ -29,10 +29,7 @@ function App() {
   //save to movieList state
   //invoke getData INSIDE of the useEffect and add page as a dependancy
   const getData = () =>
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}`
-      )
+    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}`)
       .then((res) => {
         console.log(res.data.results);
         setMovieList(res.data.results);
@@ -61,7 +58,7 @@ function App() {
           removeMovie={removeMovie}
         />
         <Watchlist
-        watchList={watchList}/>
+        watchList={watchList} removeMovie={removeMovie}/>
       </main>
     </div>
   );

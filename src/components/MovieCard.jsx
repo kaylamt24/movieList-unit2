@@ -1,5 +1,3 @@
-import '../App.css'
-
 
 const MovieCard = ({addMovie, movie, watchList, removeMovie}) => {
 
@@ -7,7 +5,7 @@ const MovieCard = ({addMovie, movie, watchList, removeMovie}) => {
         return notMovie.id === movie.id
     })
 
-    let button = inWatchList.length === 0 ? (<button onClick={() => addMovie(movie)}>Add To list</button>) : (<button onClick={() => removeMovie(movie)}>Remove From List</button>)
+    let button = inWatchList.length === 0 ? (<button onClick={() => addMovie(movie)}>Add To List</button>) : (<button onClick={() => removeMovie(movie)}>Remove From List</button>)
 
     //ternary condition1 ? if : else
     //this is where you can move the button to its own screen so it can be used several times over a large application
